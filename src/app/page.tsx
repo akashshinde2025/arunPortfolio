@@ -407,13 +407,16 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="aspect-square bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-3xl relative overflow-hidden">
-              <Image
-                src="/arun-profile.png"
-                alt="Arun Kavanekar - Graphic Designer"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              {/* Temporarily using gradient background until optimized image is ready */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-white font-bold text-2xl">AK</span>
+                  </div>
+                  <p className="text-white font-semibold">Arun Kavanekar</p>
+                  <p className="text-gray-300 text-sm">Graphic Designer</p>
+                </div>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
             
