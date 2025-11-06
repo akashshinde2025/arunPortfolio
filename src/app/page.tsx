@@ -407,99 +407,35 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="aspect-square bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-3xl relative overflow-hidden">
-              {/* Enhanced profile placeholder with better visibility and animation */}
-              <div className="absolute inset-0 flex items-center justify-center p-8">
+              {/* Profile Image using regular img tag for better GitHub Pages compatibility */}
+              <img
+                src="/arun-profile.png"
+                alt="Arun Kavanekar - Graphic Designer"
+                className="absolute inset-0 w-full h-full object-cover"
+                onError={(e) => {
+                  console.log('Image failed to load');
+                  e.currentTarget.style.display = 'none';
+                  // Show fallback
+                  const fallback = e.currentTarget.nextElementSibling;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              
+              {/* Fallback placeholder */}
+              <div className="absolute inset-0 hidden items-center justify-center bg-gradient-to-br from-purple-500/30 to-pink-500/30">
                 <div className="text-center">
                   <motion.div 
-                    className="w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center shadow-2xl"
-                    animate={{ 
-                      scale: [1, 1.05, 1],
-                      rotate: [0, 5, -5, 0]
-                    }}
-                    transition={{ 
-                      duration: 4, 
-                      repeat: Infinity, 
-                      ease: "easeInOut"
-                    }}
+                    className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <motion.span 
-                      className="text-white font-bold text-4xl"
-                      animate={{ 
-                        opacity: [1, 0.8, 1]
-                      }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity, 
-                        ease: "easeInOut"
-                      }}
-                    >
-                      AK
-                    </motion.span>
+                    <span className="text-white font-bold text-2xl">AK</span>
                   </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <motion.p 
-                      className="text-white font-bold text-2xl mb-2"
-                      animate={{ 
-                        textShadow: [
-                          "0 0 10px rgba(168, 85, 247, 0.5)",
-                          "0 0 20px rgba(168, 85, 247, 0.8)",
-                          "0 0 10px rgba(168, 85, 247, 0.5)"
-                        ]
-                      }}
-                      transition={{ 
-                        duration: 3, 
-                        repeat: Infinity, 
-                        ease: "easeInOut"
-                      }}
-                    >
-                      Arun Kavanekar
-                    </motion.p>
-                    <motion.p 
-                      className="text-purple-300 text-lg font-semibold"
-                      animate={{ 
-                        color: [
-                          "rgb(196 181 253)",
-                          "rgb(236 72 153)", 
-                          "rgb(196 181 253)"
-                        ]
-                      }}
-                      transition={{ 
-                        duration: 3, 
-                        repeat: Infinity, 
-                        ease: "easeInOut"
-                      }}
-                    >
-                      Graphic Designer
-                    </motion.p>
-                    <motion.div 
-                      className="mt-4 flex justify-center space-x-2"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 1 }}
-                    >
-                      {[0, 1, 2].map((i) => (
-                        <motion.div
-                          key={i}
-                          className="w-2 h-2 bg-purple-400 rounded-full"
-                          animate={{
-                            scale: [1, 1.5, 1],
-                            opacity: [0.5, 1, 0.5]
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: i * 0.2
-                          }}
-                        />
-                      ))}
-                    </motion.div>
-                  </motion.div>
+                  <p className="text-white font-semibold">Arun Kavanekar</p>
+                  <p className="text-purple-200 text-sm">Graphic Designer</p>
                 </div>
               </div>
+              
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               
               {/* Enhanced floating particles */}
