@@ -386,7 +386,7 @@ const AboutSection = () => {
 
             <div className="mt-8">
               <motion.a
-                href="/Arun_Kavanekar_Resume.pdf"
+                href="./Arun_Kavanekar_Resume.pdf"
                 download="Arun_Kavanekar_Resume.pdf"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -409,7 +409,7 @@ const AboutSection = () => {
             <div className="aspect-square bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-3xl relative overflow-hidden">
               {/* Profile Image using regular img tag for better GitHub Pages compatibility */}
               <img
-                src="/arun-profile.png"
+                src="./arun-profile.png"
                 alt="Arun Kavanekar - Graphic Designer"
                 className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => {
