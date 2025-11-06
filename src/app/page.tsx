@@ -416,7 +416,7 @@ const AboutSection = () => {
                   console.log('Image failed to load');
                   e.currentTarget.style.display = 'none';
                   // Show fallback
-                  const fallback = e.currentTarget.nextElementSibling;
+                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
                   if (fallback) fallback.style.display = 'flex';
                 }}
               />
